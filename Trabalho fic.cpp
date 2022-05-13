@@ -5,9 +5,13 @@
 	
 	int main(){
 	
-	char nome1[100];
+	char nome[100];
 	char nome2[100];
-	int valor, press, consulta, codigo, data, saida;
+	char space[2];
+	char space2[2];
+	int valor, press, consulta, codigo, saida;
+	int data1, data2, data3;
+	int i = 0;
 
 	
 	printf("________________________\n \n");
@@ -16,21 +20,22 @@
 	Sleep(1000);
 	
 	printf("Pressione ENTER para iniciar.\n \n");
-	Sleep(2000);
+	gets(space);
+	Sleep(1500);
 	
 	printf("Verificamos que esse e o seu primeiro acesso. \nVamos seguir entao com seu cadastro. Ok? \n \n");
-	Sleep(4000);
+	Sleep(3000);
 	
 	printf("Para iniciarmos digite seu nome completo: \n");
-	scanf("%s",nome1);//o próximo código só funciona se digitar o primeiro  o primeiro nome.
+	gets(nome);
 	Sleep(1000);
 	
-	printf("\n\nAgora digite sua data de nascimento completa: \n");
-	scanf("%d", &data);//queria por o formato de data
+	printf("\n\nAgora digite sua data de nascimento completa no formato DD/MM/AAAA: \n");
+	scanf("%d / %d / %d", &data1, &data2, &data3);//queria por o formato de data
 	Sleep(2000);
 	
 	printf("\nPerfeito! Agora para finalizarmos digite um valor para deposito.\n");
-	Sleep(1500);
+	Sleep(2000);
 	printf("Lembrando que o deposito inicial precisar ser a partir de R$ 100,00:\n \n");// Queria por um limite mínimo e máximo
 	scanf("%i", &valor);
 	
@@ -44,6 +49,12 @@
 		while(valor < 100);
 		Sleep(3000);
 		
+		printf("PROCESSANDO");
+		for(i = 0; i <= 3 ; i++){
+			printf(".");
+			Sleep(1000);
+			}
+			
 		printf("\n \n__________________________________________________\n \n");
 		printf("Parabens! Seu cadastro foi realizado com sucesso!\n \n");
 		printf("__________________________________________________");
@@ -52,12 +63,18 @@
 	
 	else{
 		
+			printf("PROCESSANDO");
+		for(i = 0; i <= 3 ; i++){
+			printf(".");
+			Sleep(1000);
+			}
+		
 		printf("\n \n__________________________________________________\n \n");
 		printf("Parabens! Seu cadastro foi realizado com sucesso!\n \n");
 		printf("__________________________________________________");
 	}
 	
-	Sleep(5000);
+	Sleep(3000);
 	system("cls");
 	
 	//teste github
@@ -68,8 +85,9 @@
 	printf("________________________\n \n");
 	Sleep(1000);
 	
-	printf("Pressione ENTER para iniciar.\n \n");
-	Sleep(2000);
+	printf("Pressione ENTER para iniciar. \n \n");
+	gets(space2);
+	Sleep(1500);
 	
 	printf("Para realizar uma consulta aos seus dados e saldo pressione 1: \n \n");
 	printf("Se voce e novo por aqui e quer realizar um cadastro pressione 2: \n \n");
@@ -78,20 +96,30 @@
 	
 	if(press == 1){
 		
-		printf("PROCESSANDO... \n \n");
-		Sleep(5000);
+		printf("PROCESSANDO");
+		for(i = 0; i <= 5 ; i++){
+			printf(".");
+			Sleep(1000);
+			}
+			
+		Sleep(1500);
+			
 		system("cls");
 		
 		printf("Digite seu codigo de acesso para realizarmos a consulta: \n");//codigo relacionado a um vetor que estará com as informações cadastradas
 		scanf("%i", &codigo);
 		Sleep(1000);
 		
-		printf("PROCESSANDO... \n \n");
-		Sleep(5000);
+		printf("PROCESSANDO");
+		for(i = 0; i <= 5 ; i++){
+			printf(".");
+			Sleep(1000);
+			}
+		Sleep(2000);
 		
 		printf("\n \n__________________________________________________\n \n");
-		printf("Ola, %s! Tudo bem? \n", nome1);
-		printf("Sua data de nascimento e %i \n",data);
+		printf("Ola, %s! Tudo bem? \n", nome);
+		printf("Sua data de nascimento e %i / %i / %i \n",data1, data2, data3);
 		printf("Voce possui R$ %i,00 em conta. \n",valor);
 		printf("\n \n__________________________________________________\n \n");
 	}
